@@ -1,15 +1,70 @@
+/* Basic page styling */
 body {
     font-family: sans-serif;
     text-align: center;
-}
-
-canvas {
-    border: 1px solid black;
-    background-color: #eee;
-}
-
-button {
+  }
+  
+  /* The text area and buttons at the top */
+  textarea {
+    margin: 10px 0;
+  }
+  button {
     padding: 10px 20px;
     font-size: 16px;
     margin: 5px;
-}
+  }
+  
+  /* 
+    Container that holds:
+      - .keys-box (the sax keys)
+      - the <canvas> for notes
+    We'll use flex layout to place them side by side.
+  */
+  .game-container {
+    display: flex;
+    justify-content: center;  /* center them horizontally in the page */
+    align-items: flex-start;  /* top-align the box and canvas */
+    margin-top: 20px;         /* space below the buttons */
+  }
+  
+  /* 
+    The light-gray, rounded-corner box containing the 7 keys.
+    Each .sax-key will be 60px tall, matching your JS note geometry.
+  */
+  .keys-box {
+    background-color: #eee; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin-right: 20px; 
+    /* The box is as tall as it needs to be. */
+  }
+  
+  /* 
+    Each key - must match your JS:
+      keyHeight=60, keySpacing=10 
+  */
+  .sax-key {
+    box-sizing: border-box; /* includes borders within the specified height */
+    width: 80px;
+    height: 60px;           /* total outer height is now exactly 60px */
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    background-color: #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  
+  /* The canvas for notes */
+  canvas {
+    border: 1px solid #000;
+    background-color: #f5f5f5;
+    /* No special positioning needed, it sits to the right of keys-box */
+  }
+  
+  .keys-box {
+    padding-top: 50px; /* or 60px, etc. */
+  }

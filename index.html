@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sax Hero</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sax Hero</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sax Hero</h1>
+  <h1>Sax Hero</h1>
 
-    <label for="songData">Enter Song Data:</label><br>
-    <textarea id="songData" rows="10" cols="50">
-# Example Song Data - C4 is Middle C, D4 is D above Middle C, etc.
-# Number after note represents duration in arbitrary units
-C4 1
-D4 1
-E4 2
-F4 1
-G4 1
-A4 2
-    </textarea><br><br>
+  <label for="songData">Enter Song Data:</label><br>
+  <textarea id="songData" rows="10" cols="50">
+# Example: note noteBeats restBeats
+C4 1 0
+D4 1 0
+E4 1 0
+F4 1 0
+G4 1 0
+A4 1 0
+B4 1 0
+C5 1 0
+D5 1 0
+E5 1 0
+F5 1 0
+G5 1 0
+A5 1 0
+B5 1 0
+  </textarea>
+  <br><br>
 
-    <button id="playButton">Play</button>
-    <button id="pauseButton">Pause</button>
-    <button id="speedUpButton">Speed Up</button>
-    <button id="slowDownButton">Slow Down</button>
-    <button id="rewindButton">Rewind</button>
+  <button id="playButton">Play</button>
+  <button id="pauseButton">Pause</button>
+  <button id="speedUpButton">Speed Up</button>
+  <button id="slowDownButton">Slow Down</button>
+  <button id="rewindButton">Rewind</button>
 
+  <!--
+    .game-container is a flex container holding:
+      - A box with the 7 keys (left)
+      - The canvas with scrolling notes (right)
+  -->
+  <div class="game-container">
+    <!--
+      A light-gray rounded box for keys.
+      Each .sax-key is 60px tall + 10px gap to match JS note geometry
+    -->
+    <div class="keys-box">
+      <div class="sax-key">T1</div>
+      <div class="sax-key">2</div>
+      <div class="sax-key">3</div>
+      <div class="sax-key">4</div>
+      <div class="sax-key">5</div>
+      <div class="sax-key">6</div>
+      <div class="sax-key">7</div>
+    </div>
+
+    <!-- The canvas where notes scroll -->
     <canvas id="myCanvas" width="800" height="600"></canvas>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Your existing JS with the scrolling notes logic -->
+  <script src="script.js"></script>
 </body>
 </html>
